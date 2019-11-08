@@ -5,7 +5,7 @@ CATEGORY OF USE: Project Workflow
 AUTHOR: Dafarkias
 LEGAL RAMIFICATIONS: GPL v.3
 COCKOS REAPER THREAD: https://forum.cockos.com/showthread.php?t=222795 
-]]local VERSION = "0.91"--[[
+]]local VERSION = "0.92"--[[
 REAPER: 5.984 (version used in development)
 EXTENSIONS: js_ReaScriptAPI v0.993 (version used in development), SWS/S&M 2.10.0
 
