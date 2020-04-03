@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Dfk Scripts" commit="fc0b19b680af3e97397e04b8935072a9f75d7732">
+<index version="1" name="Dfk Scripts" commit="a03b622e13c62e096afb6c558f9756d559383980">
   <category name="Dfk Scripts">
-    <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Advance Loop Segment">
+    <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Dfk Advance Loop Segment">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
@@ -17,6 +17,20 @@
       </version>
       <version name="1.01" author="Dfk" time="2020-04-03T09:54:20Z">
         <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/fc0b19b680af3e97397e04b8935072a9f75d7732/Dfk%20Scripts/Dfk%20Advance%20Loop%20Segment.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Dfk Custom Toolbar Utility.lua" type="script" desc="Dfk Custom Toolbar Utility">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Script Workspace utility for creating custom toolbars.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.83" author="Dfk" time="2020-04-03T11:17:10Z">
+        <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/a03b622e13c62e096afb6c558f9756d559383980/Dfk%20Scripts/Dfk%20Custom%20Toolbar%20Utility.lua</source>
       </version>
     </reapack>
   </category>
