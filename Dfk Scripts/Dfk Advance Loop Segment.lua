@@ -1,5 +1,5 @@
 --[[
- * ReaScript Name: Advance Loop Segment
+ * ReaScript Name: Dfk Advance Loop Segment
  * About: Script advances the project loop by the length of the loop itself.
  * Author: Dfk
  * Licence: GPL v3

@@ -5,7 +5,7 @@
  * Licence: GPL v3
  * REAPER: 6.0
  * Extensions: js_ReaScriptAPI v0.999 (version used in development)
- * Version: .83
+ * Version: 0.83
 --]]
  
 --[[
@@ -39,7 +39,7 @@
 		+'Escape' key no longer exits script
 --]]
 
-local VERSION = .83
+local VERSION = ".83"
 
 function msg(param, clr) if clr then reaper.ClearConsole() end reaper.ShowConsoleMsg(tostring(param).."\n") end function up() reaper.UpdateTimeline() reaper.UpdateArrange() end 
 
