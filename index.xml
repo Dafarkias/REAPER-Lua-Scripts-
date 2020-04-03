@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Dfk Scripts" commit="a03b622e13c62e096afb6c558f9756d559383980">
+<index version="1" commit="7007f019f0391cba3ae859851e036a4778e3d4b0">
   <category name="Dfk Scripts">
     <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Dfk Advance Loop Segment">
       <metadata>
@@ -31,6 +31,20 @@
       </metadata>
       <version name="0.83" author="Dfk" time="2020-04-03T11:17:10Z">
         <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/a03b622e13c62e096afb6c558f9756d559383980/Dfk%20Scripts/Dfk%20Custom%20Toolbar%20Utility.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Dfk Mini Track Mixer.lua" type="script" desc="Dfk Mini Track Mixer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Small GUI workflow for mixing track volume and pan.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Dfk" time="2020-04-03T12:09:06Z">
+        <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/7007f019f0391cba3ae859851e036a4778e3d4b0/Dfk%20Scripts/Dfk%20Mini%20Track%20Mixer.lua</source>
       </version>
     </reapack>
   </category>
