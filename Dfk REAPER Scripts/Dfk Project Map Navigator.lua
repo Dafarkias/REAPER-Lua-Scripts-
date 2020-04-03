@@ -1,100 +1,24 @@
 --[[
  * ReaScript Name: Dfk Project Map Navigator
- * About: Project workflow utility for scrolling/zooming in REAPER.
+ * About: Script advances the project loop by the length of the loop itself.
  * Author: Dfk
  * Licence: GPL v3
  * REAPER: 6.0
  * Extensions: js_ReaScriptAPI v0.993 (version used in development), SWS/S&M 2.10.0
- * Version: 0.95a
+ * Version: 1.0
 --]]
  
 --[[
  * Changelog:
- * v0.5 (2020-04-03) 
-		+(script release)
- * v0.51 (2020-04-03)
-		+Minor bugs
- * v0.52 (2020-04-03)
-		+Added script internal "USER--AREA" customizations
-		+Bug: post 6 (Nantho, 1st attempt)
- * v0.6 (2020-04-03)
-		+Added "load" screen
-		+Added mouse cursor graphic
-		+Added new project length detection
-		+FEATURE: rmb marquee view
- * v0.63 (2020-04-03)
-		+revised rmb marquee
-		+various attempted bug-fixes
- * v0.64 (2020-04-03)
-		+Attempted fix: Improper display of project markers/regions
-		+Attempted fix: Inaccurate placement of track names
-		+Added: display project marker/region names at top of window 
- * v0.7 (2020-04-03)
-		+Added: play/edit cursor display in project map
-		+Added: place edit cursor using project map ( middle mouse button)
-		+Added: play/stop playback using project map (spacebar)
-		+Added more 'user area' variables
-		+Reconfigured algorithm for 'drawing' items (hopefully fixed issue with 'frozen' items, or scaling issues)
- * v0.75 (2020-04-03)
-		+Added: mousewheel vertical zoom (mousewheel), modifier options in 'user area'
-		+Added: mousewheel horizontal zoom (Shift+mousewheel), modifier options in 'user area'
-		+Added: 'escape' key closes window
-		+Added: window is pinned by default, option to change in 'user area'
-		+Removed: track name collision with project/region markers 
- * v0.8 (2020-04-03)
-		+Added MIDI item display (NEW, testing required)
- * v0.81 (2020-04-03)
-		+Bug: project marker colors displaying incorrectly (Sumalc, post#64, first attempt)
- * v0.85 (2020-04-03)
-		+Added: project map displays the project loop-selection (can be disabled in 'user area')
-		+Added: left/right arrows move edit cursor to nearest project/region marker in applicable direction
-		+Added: up arrow alternates setting project loop ends to edit cursor position
-		+Added: down arrow hard 'plays' from edit cursor position (doesn't cycle between play/stop like spacebar does)
-		+Added: '/' toggles project loop on-and-off (project repeat)
- * v0.86 (2020-04-03)
-		+Added: 'm' toggles project mixer window visible
-		+Added: ctrl+left-click (command for OSX) 'solos' project map track in mixer (toggle)
- * v0.87 (2020-04-03)
-		+Added: script refresh after changing track color
-		+Added: 'r' refreshes script (force reload, good for updating media items, which don't auto-update)
-		+Added: proper hotkey documentation concerning OSX/Windows specifications (Sumalc, post#72 (needs tested))
-		+Added: 'Waveform_Definition' into script's 'user area'. Can improve performance. 
-		+Added: marker number to beginning of title (Sumalc, post#72)
- * v0.9 (2020-04-03)
-		+Fixed: error with assignment of mousewheel modifier(s)
-		+Added: 'user area' option for bordless window as default: 
-		+Added: F12 cycles between borderless window and bordered window 
- * v0.91 (2020-04-03)
-		+Removed borderless window due to glitch-error between window positioning and gfx.h
-		+Fixed error with project/region marker color display
- * v0.92 (2020-04-03)
-		+Added borderless window option back in (shift+click to center window on mouse)
- * v0.93 (2020-04-03)
-		+FEATURE: 'x' sets edit cursor to first visable measure in arrange/track view (a.k.a. Nantho's request)
-		+Reconfigured marquee. Attempted to bring back its intended behavior/functionality
-		+Stereo display for media items (previously, only mono. Once again, I used code from spk77 to make this happen.)
-		+Reconfigured MIDI-items notes visually to be slightly more prominent.
-		+Removed small bugs, and bolstered script efficiency.
- * v0.93 (2020-04-03)
-		+FEATURE: 'x' sets edit cursor to first visable measure in arrange/track view (a.k.a. Nantho's request)
-		+Reconfigured marquee. Attempted to bring back its intended behavior/functionality
-		+Stereo display for media items (previously, only mono. Once again, I used code from spk77 to make this happen.)
-		+Reconfigured MIDI-items notes visually to be slightly more prominent.
-		+Removed small bugs, and bolstered script efficiency.
- * v0.94 (2020-04-03)
-		+Worked on misrepresentation of stereo items in display
- * v0.95 (2020-04-03)
-		+Did stuff. 
- * v0.95a (2020-04-03)
-		+Removed console messages and added F12 to toggle window title bar.
+ * v1.0 (2020-04-03)
+  + script release
 --]]
 
-local VERSION = "0.95a"
+local VERSION = "0.96"
 
 --USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA--USER--AREA
 --
 local Pin_window_script                   = true        -- true/false 
-local Borderless_Window                   = true        -- true/false
 local Script_Load_Speed                   = 10          -- input values of 1 or greater. Use if load screen takes too long. Use with caution!
 local Waveform_Definition                 = 5           -- 1-10: Adjusting this can greatly affect the script performance. Use with caution!
 local Show_Project_Markers                = true        -- true/false
@@ -149,6 +73,7 @@ local b_xx      = b_x+b_w
 local b_yy      = b_y+b_h
 
 -- other vars
+local Borderless_Window = true
 local edit_cursor = reaper.GetCursorPosition()
 local gfx_char = {} gfx_char[0], gfx_char[1], gfx_char[2], gfx_char[3], gfx_char[4], gfx_char[5], gfx_char[6], gfx_char[7], gfx_char[8], gfx_char[9], gfx_char[10], gfx_char[11], gfx_char[12] = .2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 if Vertical_MouseWheel_Modifier == "shift" then Vertical_MouseWheel_Modifier = 8 elseif Vertical_MouseWheel_Modifier == "WIN_alt" then Vertical_MouseWheel_Modifier = 16 elseif Vertical_MouseWheel_Modifier == "WIN_control" then Vertical_MouseWheel_Modifier = 4 elseif Vertical_MouseWheel_Modifier == "OSX_option" then Vertical_MouseWheel_Modifier = 16 elseif Vertical_MouseWheel_Modifier == "OSX_command" then Vertical_MouseWheel_Modifier = 4 else Vertical_MouseWheel_Modifier = 0 end  
@@ -161,6 +86,7 @@ function init()
 	if reaper.HasExtState( "Dfk Project Map", "W_H" ) then h = reaper.GetExtState( "Dfk Project Map", "W_H" ) end
 	if reaper.HasExtState( "Dfk Project Map", "W_X" ) then x = reaper.GetExtState( "Dfk Project Map", "W_X" ) end
 	if reaper.HasExtState( "Dfk Project Map", "W_Y" ) then y = reaper.GetExtState( "Dfk Project Map", "W_Y" ) end
+	if reaper.HasExtState( "Dfk Project Map", "W_B" ) and reaper.GetExtState( "Dfk Project Map", "W_B" ) == "false" then Borderless_Window = false end
 	gfx.init(project_name, w, h, d, x, y )
 	window_script = reaper.JS_Window_Find( project_name, 1 ) if Pin_window_script == true then reaper.JS_Window_SetZOrder( window_script, "TOPMOST" ) end  
 	if Borderless_Window == true then reaper.JS_Window_AttachResizeGrip(window_script) reaper.JS_Window_SetStyle(window_script, "POPUP") end 
@@ -686,6 +612,7 @@ function exit()
 	reaper.SetExtState( "Dfk Project Map", "W_Y",  wy, true )
 	reaper.SetExtState( "Dfk Project Map", "W_W",  ww, true )
 	reaper.SetExtState( "Dfk Project Map", "W_H",  wh, true )
+	reaper.SetExtState( "Dfk Project Map", "W_B",  tostring(Borderless_Window), true )
 end
 
 --delete_ext_states()

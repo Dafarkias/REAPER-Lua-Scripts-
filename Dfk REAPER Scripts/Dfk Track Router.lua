@@ -5,7 +5,7 @@
  * Licence: GPL v3
  * REAPER: 6.0
  * Extensions: js_ReaScriptAPI v0.993 (version used in development)
- * Version: 0.80
+ * Version: 1.1
 --]]
  
 --[[
@@ -23,13 +23,13 @@
 	+Parent-send now works in similtude to regular send: volume can be adjusted.
  * v0.75 (2020-04-03)
 	+Early stages of marquee-selection added. Current menu features updated to accomodate multi-selection.
- * v.80 (2020-04-03)
+ * v1.1 (2020-04-03)
 	+Corrected script handling of send receive button usage. 
 	+Added MIDI/audio menu options to track menu and send menu (right-click).
 	+Various improvements. 
 --]]
 
-local VERSION = ".8"
+local VERSION = "1.1"
 
 function msg() end function up() reaper.UpdateTimeline() reaper.UpdateArrange() end 
 local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context() 
