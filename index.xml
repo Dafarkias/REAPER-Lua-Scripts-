@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="7007f019f0391cba3ae859851e036a4778e3d4b0" name="Dfk Scripts">
+<index version="1" commit="db38955eeeae41af3ed34e99ab8e4974a299bd6e" name="Dfk Scripts">
   <category name="Dfk Scripts">
     <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Dfk Advance Loop Segment">
       <metadata>
@@ -45,6 +45,21 @@
       </metadata>
       <version name="1.0" author="Dfk" time="2020-04-03T12:09:06Z">
         <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/7007f019f0391cba3ae859851e036a4778e3d4b0/Dfk%20Scripts/Dfk%20Mini%20Track%20Mixer.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Dfk Track Router.lua" type="script" desc="Dfk Advance">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Script advances the project loop by the length of the loop itself.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.01" author="Dfk" time="2020-04-03T12:35:44Z">
+        <changelog><![CDATA[+ script release]]></changelog>
+        <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/db38955eeeae41af3ed34e99ab8e4974a299bd6e/Dfk%20Scripts/Dfk%20Track%20Router.lua</source>
       </version>
     </reapack>
   </category>
