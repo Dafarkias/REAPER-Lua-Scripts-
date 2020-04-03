@@ -4,7 +4,7 @@
  * Author: Dfk
  * Licence: GPL v3
  * REAPER: 6.0
- * Extensions: None
+ * Extensions: js_ReaScriptAPI v0.993 (version used in development)
  * Version: 1.0
 --]]
  

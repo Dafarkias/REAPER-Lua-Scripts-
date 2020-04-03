@@ -9,34 +9,34 @@
 --]]
  
 --[[
-* Changelog:
-* v0.5 (2020-04-03) 
-		+(script release)
-* v0.6 (2020-04-03)
-		+(complete overhaul)
-* v0.61 (2020-04-03)
-		+(various stuff)
-* v.7 (2020-04-03)
-		+.png images for buttons
-* v.8 (2020-04-03)
-		+bugs
-		+script can be "paused" to reduce cpu usage
-		+toggle state
-* v.81 (2020-04-03)
-		+bug
-		+Added option to set background width and height, and autosize 
-* v.81a (2020-04-03)
-		+quick-fix
-* v.81b (2020-04-03)
-		+quick-fix
-* v.82 (2020-04-03)
-		+tooltip captions after hovering for 3+ seconds
-		+automatically bring keyboard focus to arrange view after button/menu activation
-* v.83 (2020-04-03)
-		+run multiple instances of the script simultaneously by duplicating, renaming with a unique name, and loading into REAPER.
-		+automatically bring keyboard focus to arrange view after button/menu activation (second attempt)
-		+'Exit (save)' and 'Exit (discard changes)' added to main menu
-		+'Escape' key no longer exits script
+ * Changelog:
+ * v0.5 (2020-04-03) 
+	+(script release)
+ * v0.6 (2020-04-03)
+	+(complete overhaul)
+ * v0.61 (2020-04-03)
+	+(various stuff)
+ * v.7 (2020-04-03)
+	+.png images for buttons
+ * v.8 (2020-04-03)
+	+bugs
+	+script can be "paused" to reduce cpu usage
+	+toggle state
+ * v.81 (2020-04-03)
+	+bug
+	+Added option to set background width and height, and autosize 
+ * v.81a (2020-04-03)
+	+quick-fix
+ * v.81b (2020-04-03)
+	+quick-fix
+ * v.82 (2020-04-03)
+	+tooltip captions after hovering for 3+ seconds
+	+automatically bring keyboard focus to arrange view after button/menu activation
+ * v.83 (2020-04-03)
+	+run multiple instances of the script simultaneously by duplicating, renaming with a unique name, and loading into REAPER.
+	+automatically bring keyboard focus to arrange view after button/menu activation (second attempt)
+	+'Exit (save)' and 'Exit (discard changes)' added to main menu
+	+'Escape' key no longer exits script
 --]]
 
 local VERSION = ".83"
