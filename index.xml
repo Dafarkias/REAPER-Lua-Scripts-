@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Dfk Scripts" commit="ccfaad9db425ef1ecd1ab6b6f3f4c5e9a5996f95">
+<index version="1" name="Dfk Scripts" commit="fc0b19b680af3e97397e04b8935072a9f75d7732">
   <category name="Dfk Scripts">
     <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Advance Loop Segment">
       <metadata>
@@ -14,6 +14,9 @@
       <version name="1.0" author="Dfk" time="2020-04-03T09:47:46Z">
         <changelog><![CDATA[+ script release]]></changelog>
         <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/ccfaad9db425ef1ecd1ab6b6f3f4c5e9a5996f95/Dfk%20Scripts/Dfk%20Advance%20Loop%20Segment.lua</source>
+      </version>
+      <version name="1.01" author="Dfk" time="2020-04-03T09:54:20Z">
+        <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/fc0b19b680af3e97397e04b8935072a9f75d7732/Dfk%20Scripts/Dfk%20Advance%20Loop%20Segment.lua</source>
       </version>
     </reapack>
   </category>
