@@ -1,6 +1,18 @@
-function Msg(param)
- reaper.ShowConsoleMsg(param.."\n")
-end
+--[[
+ * ReaScript Name: Advance Loop Segment
+ * About: Script advances the project loop by the length of the loop itself.
+ * Author: Dfk
+ * Licence: GPL v3
+ * REAPER: 6.0
+ * Extensions: None
+ * Version: 1.0
+--]]
+ 
+--[[
+ * Changelog:
+ * v1.0 (2020-04-03)
+  + script release
+--]]
 
 lstart, lend = reaper.GetSet_LoopTimeRange( false, true, 0, 0, false )
 
