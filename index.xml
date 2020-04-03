@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="cf9009cd3850e3022afc77ee7cdbf7794663e9d4">
+<index version="1" name="Dfk REAPER Scripts" commit="cf9009cd3850e3022afc77ee7cdbf7794663e9d4">
   <category name="Dfk REAPER Scripts">
     <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Dfk Advance Loop Segment">
       <metadata>
