@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Dfk Scripts"/>
+<index version="1" name="Dfk Scripts" commit="ccfaad9db425ef1ecd1ab6b6f3f4c5e9a5996f95">
+  <category name="Dfk Scripts">
+    <reapack name="Dfk Advance Loop Segment.lua" type="script" desc="Advance Loop Segment">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Script advances the project loop by the length of the loop itself.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Dfk" time="2020-04-03T09:47:46Z">
+        <changelog><![CDATA[+ script release]]></changelog>
+        <source main="main">https://github.com/Dafarkias/REAPER-Lua-Scripts-/raw/ccfaad9db425ef1ecd1ab6b6f3f4c5e9a5996f95/Dfk%20Scripts/Dfk%20Advance%20Loop%20Segment.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>
